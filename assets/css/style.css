@@ -991,6 +991,37 @@ p:last-child { margin-bottom: 0; }
   overflow: hidden;
 }
 
+.gallery-hero {
+  padding: 4rem 0;
+}
+
+.gallery-reception-showcase {
+  border-radius: var(--radius-xl);
+  margin-bottom: 4rem;
+  padding: 3.5rem;
+}
+
+.gallery-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-photo-card {
+  min-width: 0;
+  padding: 0.65rem;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.gallery-photo-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
 .reception-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1779,6 +1810,10 @@ textarea.form-control {
   .reception-grid {
     grid-template-columns: 1fr;
   }
+  .gallery-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -1813,25 +1848,26 @@ textarea.form-control {
     grid-template-columns: 1fr;
   }
 
-  /* Compact top bars on mobile - strictly half size to keep navbar prominent */
+  /* Keep the emergency advisory fully readable on narrow screens. */
   .emergency-bar {
     font-size: 0.68rem;
-    padding: 0.15rem 0.5rem;
-    line-height: 1.2;
+    padding: 0.4rem 0.5rem;
+    line-height: 1.35;
   }
   .emergency-bar .container {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 0.35rem;
+    gap: 0.3rem 0.45rem;
   }
   .emergency-bar strong {
     font-size: 0.58rem;
     padding: 0.04rem 0.3rem;
   }
   .emergency-bar span {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    flex: 1 1 100%;
   }
   .top-info-bar {
     font-size: 0.68rem;
@@ -1847,5 +1883,22 @@ textarea.form-control {
   }
   .top-info-hide-mob {
     display: none;
+  }
+
+  .gallery-hero {
+    padding: 3rem 0;
+  }
+  .gallery-reception-showcase {
+    padding: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .gallery-reception-showcase .reception-image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+  .gallery-new-photos-heading {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
   }
 }
