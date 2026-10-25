@@ -1390,16 +1390,21 @@ p:last-child { margin-bottom: 0; }
    ========================================================================== */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
   gap: 3rem;
 }
 
 .contact-card {
+  min-width: 0;
   background: #FFFFFF;
   border-radius: var(--radius-lg);
   padding: 2.25rem;
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-md);
+}
+
+.contact-card .btn {
+  white-space: normal;
 }
 
 .contact-info-list {
@@ -1413,6 +1418,10 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+}
+
+.contact-info-item > div:last-child {
+  min-width: 0;
 }
 
 .contact-info-icon {
@@ -1443,6 +1452,7 @@ p:last-child { margin-bottom: 0; }
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: 0;
+  overflow-wrap: anywhere;
 }
 
 .form-group {
@@ -1815,7 +1825,7 @@ textarea.form-control {
     gap: 1rem;
   }
   .contact-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -1846,6 +1856,9 @@ textarea.form-control {
   }
   .form-row {
     grid-template-columns: 1fr;
+  }
+  .transparency-box .btn {
+    white-space: normal;
   }
 
   /* Keep the emergency advisory fully readable on narrow screens. */

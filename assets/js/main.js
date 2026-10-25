@@ -283,7 +283,7 @@ function initFormHandlers() {
       }
 
       // Format WhatsApp message
-      const hospitalPhone = '919999999999'; // Ready for verified hospital phone
+      const hospitalPhone = '919304853619';
       const text = encodeURIComponent(
         `*New Enquiry - OSG Hospital Website*\n` +
         `*Name:* ${name}\n` +
