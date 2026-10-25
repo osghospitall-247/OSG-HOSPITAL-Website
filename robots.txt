@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://osghospital.in/sitemap.xml
+Sitemap: https://osghospital.com/sitemap.xml
